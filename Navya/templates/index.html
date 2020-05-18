@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body bgcolor="pink">
+ <div class="login">
+	<h1>Credit_Card_Fraud_Detection Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <h2><b>
+	Enter Time : <input type="text" name="time" placeholder="time" required="required" /><br><br>
+    Enter V1: <input type="text" name="v1" placeholder="v1" required="required" /><br><br>
+    Enter V7: <input type="text" name="v7" placeholder="Children" required="required" /><br><br>
+    Enter V13: <input type="text" name="v13" placeholder="Smoker" required="required" /><br><br>
+    Enter V27: <input type="text" name="v27" placeholder="region" required="required" /><br><br>
+    Enter Amount: <input type="text" name="amount" placeholder="region" required="required" /><br><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Class</button>
+    <h2><b></form>
+    {{ prediction_text }}   
+
+ </div>
+
+
+</body>
+</html>
